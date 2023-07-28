@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayPal Fee Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gray-100">
+    <div class="container mx-auto py-8">
+        <div class="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+            <h1 class="text-2xl font-bold mb-6">PayPal Fee Calculator</h1>
+            <div>
+                <label class="block text-gray-700 font-semibold mb-2" for="saleAmount">Sale Amount ($USD):</label>
+                <input class="block w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring focus:ring-blue-200" type="number" step="0.01" id="saleAmount" required >
+            </div>
+            <div class="mt-4">
+                <label class="block text-gray-700 font-semibold mt-4 mb-2" for="paypalFees">PayPal Fees:</label>
+                <input class="block w-full px-4 py-2 rounded-lg bg-gray-100 cursor-not-allowed" type="text" id="paypalFees" readonly="" placeholder="enter an amount above">
+            </div>
+            <div class="mt-4">
+                <button class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg" onclick="calculateFee()">Calculate Fee</button>
+            </div>
+            <div class="mt-6" id="result" style="display: none;">
+                <p class="text-gray-700 font-semibold">PayPal Fee Calculation results</p>
+                <div class="mt-4">
+                    <p class="text-gray-700">Total fees:</p>
+                    <p class="text-lg font-bold" id="feeAmount"></p>
+                </div>
+                <div class="mt-4">
+                    <p class="text-gray-700">You will receive:</p>
+                    <p class="text-lg font-bold" id="amountAfterFees"></p>
+                    <!-- <p>If you invoice for $2,000</p> -->
+                    <p class="text-sm text-gray-600" id="disclaimerAmountAfterFees"></p>
+                </div>
+                <div class="mt-4">
+                    <p class="text-gray-700">You should ask for:</p>
+                    <p class="text-lg font-bold" id="amountToAsk"></p>
+                    <p class="text-sm text-gray-600" id="disclaimerAmountToAsk"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+	<script type="module" src="main.js"></script>
+</body>
+
+</html>
